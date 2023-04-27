@@ -40,7 +40,7 @@ public class ClientesController {
 	@GetMapping("/clientes/{id}")
 	public Clientes clientById(@PathVariable(name = "id") int id) {
 		Clientes clientxID = new Clientes();
-		clientxID = clientServiceImpl.clientsXID(id);
+		clientxID = clientServiceImpl.clientesXID(id);
 		return clientxID;
 	}
 
@@ -64,13 +64,13 @@ public class ClientesController {
 		Clientes Clients_selected = new Clientes();
 		Clientes Clients_updated = new Clientes();
 
-		Clients_selected = clientServiceImpl.clientsXID(id);
+		Clients_selected = clientServiceImpl.clientesXID(id);
 		Clients_selected.setName(clients.getName());
 		Clients_selected.setPhoneNum(clients.getPhoneNum());
 		Clients_selected.setDni(clients.getDni());
 		Clients_selected.setEmail(clients.getEmail());
 
-		Clients_selected = clientServiceImpl.clientsXID(id);
+		Clients_selected = clientServiceImpl.clientesXID(id);
 
 		return Clients_updated;
 	}

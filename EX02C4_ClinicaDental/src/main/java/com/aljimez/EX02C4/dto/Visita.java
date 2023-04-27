@@ -22,7 +22,7 @@ public class Visita {
 	
 	@ManyToOne
 	@JoinColumn( name = "clientes_id")
-	private Clientes clientes;
+	private Clientes cliente;
 	
 	@ManyToOne
 	@JoinColumn(name = "odontologo_codigo")
@@ -37,10 +37,10 @@ public class Visita {
 	private double prices;
 	
 	public Visita() {}
-	public Visita (Long id, Clientes clients,Odontologo odontologo_codigo,String proceso, double prices,LocalDateTime time) {
+	public Visita (Long id, Clientes cliente,Odontologo odontologo_codigo,String proceso, double prices,LocalDateTime time) {
 		
 		this.id = id;
-		this.clientes = clients;
+		this.cliente = cliente;
 		this.odontologos = odontologo_codigo;
 		this.proceso = proceso;
 		this.prices = prices;
@@ -54,10 +54,10 @@ public class Visita {
 		this.id = id;
 	}
 	public Clientes getClients() {
-		return clientes;
+		return cliente;
 	}
 	public void setClients(Clientes clients) {
-		this.clientes = clients;
+		this.cliente = clients;
 	}
 	public Odontologo getOdontologist() {
 		return odontologos;
@@ -85,7 +85,7 @@ public class Visita {
 	}
 	@Override
 	public String toString() {
-		return "Visit [id=" + id + ", clients=" + clientes + ", odontologist=" + odontologos + ", proceso="
+		return "Visit [id=" + id + ", cliente=" + cliente + ", odontologist=" + odontologos + ", proceso="
 				+ proceso + ", time=" + time + ", prices=" + prices + "]";
 	}
 	

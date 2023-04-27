@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.aljimez.EX02C4.dto.Visita;
+import com.aljimez.EX02C4.service.ClientesServiceImpl;
 import com.aljimez.EX02C4.service.VisitaServiceImpl;
 
 @RestController // Rest controller
@@ -21,6 +22,8 @@ public class VisitaController {
 	// Implement service
 	@Autowired
 	VisitaServiceImpl visitServiceImpl;
+	
+	ClientesServiceImpl clientesServiceImpl;
 
 	@GetMapping("/visitas")
 	public List<Visita> listVisits() {
@@ -53,6 +56,12 @@ public class VisitaController {
 
 		updatedVisit = visitServiceImpl.actualizarVisita(selectedVisit);
 		return updatedVisit;
+	}
+	
+	@GetMapping("/visitas/clientes/{id}")
+	public List<Visita> visitaXclientesID(@PathVariable(name="id") int id) {
+
+		return clientesServiceImpl.listarVisitaXClientes(clientesServiceImpl.clientesXID(id));
 	}
 	
 	@DeleteMapping ("/visitas/{id}")

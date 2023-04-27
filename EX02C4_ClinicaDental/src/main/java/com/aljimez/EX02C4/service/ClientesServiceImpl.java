@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.aljimez.EX02C4.dao.IClientesDAO;
 import com.aljimez.EX02C4.dto.Clientes;
+import com.aljimez.EX02C4.dto.Visita;
 
 @Service
 public class ClientesServiceImpl implements IClientesService{
@@ -28,7 +29,7 @@ public class ClientesServiceImpl implements IClientesService{
 	}
 
 	@Override
-	public Clientes clientsXID(int id) {
+	public Clientes clientesXID(int id) {
 		// TODO Auto-generated method stub
 		return iClientDAO.findById(id).get();
 	}
@@ -48,6 +49,11 @@ public class ClientesServiceImpl implements IClientesService{
 	public Clientes saveCliente(Clientes client) {
 		// TODO Auto-generated method stub
 		return iClientDAO.save(client);
+	}
+
+	public List<Visita> listarVisitaXClientes(Clientes clientesXID) {
+		// TODO Auto-generated method stub
+		return iClientDAO.findByCliente(clientesXID);
 	}
 
 }

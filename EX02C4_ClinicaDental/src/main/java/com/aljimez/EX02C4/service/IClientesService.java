@@ -12,7 +12,7 @@ public interface IClientesService {
 	public Clientes actualizarClients(Clientes clients);
 
 
-	Clientes clientsXID(int id);
+	Clientes clientesXID(int id);
 
 	void eliminarClients(int id);
 

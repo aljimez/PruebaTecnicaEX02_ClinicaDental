@@ -23,20 +23,23 @@ public class Clientes {
 	private String name;
 	private int phoneNum;
 	private String email;
+	private String cliente;
 
-	@OneToMany(mappedBy = "clientes")
+
+	@OneToMany(mappedBy = "cliente")
 	private List<Visita> visit;
 
 	public Clientes() {
 	}
 
-	public Clientes(Long id, String dni, String name, int phoneNum, String email, List<Visita> visitas) {
+	public Clientes(Long id, String dni, String name, int phoneNum, String email, List<Visita> visitas,String cliente) {
 		this.id = id;
 		this.dni = dni;
 		this.name = name;
 		this.phoneNum = phoneNum;
 		this.email = email;
 		this.visit = visitas;
+		this.cliente = cliente;
 	}
 
 	public Long getId() {
