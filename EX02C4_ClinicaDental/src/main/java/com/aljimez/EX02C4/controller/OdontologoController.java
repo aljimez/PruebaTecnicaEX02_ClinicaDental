@@ -47,7 +47,7 @@ public class OdontologoController {
 		
 
 		// Get list of visits for odontologist
-		@GetMapping("/odontologo/{odontologistId}/visita")
+		@GetMapping("/odontologo/{odontologoId}/visita")
 		public List<Visita> listVisitsByOdontologistId(@PathVariable(name = "odontologoId") Long odontologoId) {
 			return visitServiceImpl.listVisitsXOdontologoId(odontologoId);
 
