@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.aljimez.EX02C4.dto.Clientes;
-import com.aljimez.EX02C4.dto.Visita;
 import com.aljimez.EX02C4.service.ClientesServiceImpl;
 import com.aljimez.EX02C4.service.OdontologoServiceImpl;
 import com.aljimez.EX02C4.service.VisitaServiceImpl;
@@ -39,17 +38,9 @@ public class ClientesController {
 //Acceso a perfil de usuario por ID
 	@GetMapping("/clientes/{id}")
 	public Clientes clientXID(@PathVariable(name = "id") int id) {
-		 Clientes clientxID = clientServiceImpl.clientesXID(id);
+		Clientes clientxID = clientServiceImpl.clientesXID(id);
 		return clientxID;
 	}
-
-	/*
-	// Get list of visits for client
-	@GetMapping("/clientes/visitas/{id}")
-	public List<Visita> listarVisitasXClientes(@PathVariable(name = "id") Clientes clientes) {
-		return visitaServiceImpl.listarVisitasXClientes(clientes);
-
-	}*/
 
 	// Post Mappings
 	@PostMapping("/clientes")

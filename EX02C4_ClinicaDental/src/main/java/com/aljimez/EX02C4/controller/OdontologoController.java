@@ -25,11 +25,11 @@ public class OdontologoController {
 
 	// Implement service
 	@Autowired
-	OdontologoServiceImpl odontologistServiceImpl;
+	OdontologoServiceImpl odontologoServiceImpl;
 
 	// Implement visit service
 	@Autowired
-	VisitaServiceImpl visitServiceImpl;
+	VisitaServiceImpl visitaServiceImpl;
 
 	@Autowired
 	ClientesServiceImpl clientesServiceImpl;
@@ -37,19 +37,19 @@ public class OdontologoController {
 	// Get Mappings
 	@GetMapping("/odontologo")
 	public List<Odontologo> listOdontologists() {
-		return odontologistServiceImpl.listarOdontologo();
+		return odontologoServiceImpl.listarOdontologo();
 	}
 
 	@GetMapping("/odontologo/{id}")
 	public Odontologo odontologistXId(@PathVariable(name = "id") int id) {
 		Odontologo odontologoxID = new Odontologo();
 
-		odontologoxID = odontologistServiceImpl.odontologoXID(id);
+		odontologoxID = odontologoServiceImpl.odontologoXID(id);
 
 		return odontologoxID;
 	}
 
-	@GetMapping("/dentista/clientes")
+	@GetMapping("/odontologo/clientes")
 	public List<Clientes> listarClientes() {
 		return clientesServiceImpl.listarClientes();
 
@@ -57,25 +57,27 @@ public class OdontologoController {
 
 	@PostMapping("/odontologo")
 	public Odontologo saveOdontologist(@RequestBody Odontologo odontologo) {
-		return odontologistServiceImpl.guardarOdontologo(odontologo);
+		return odontologoServiceImpl.guardarOdontologo(odontologo);
 	}
 	
-	@GetMapping("/dentista/citas")
-	public List<Visita> listarCitas(){
-		return visitServiceImpl.listarVisita();
+	@GetMapping("/odontologo/visitas")
+	public List<Visita> listarVisitas(){
+		return visitaServiceImpl.listarVisita();
 	}
 
 	@PutMapping("/odontologo/{id}")
 	public Odontologo updateOdontologist(@PathVariable(name = "id") Long id, @RequestBody Odontologo odontologo) {
 		Odontologo Odontologoselecc = new Odontologo(id, odontologo.getDni(), odontologo.getName(),
-				odontologo.getPhoneNum(), odontologo.getEmail());
-		Odontologo Odonrologoactu = odontologistServiceImpl.actualizarOdontologo(Odontologoselecc);
+				odontologo.getPhoneNum(), odontologo.getEmail(),odontologo.getOdontologo());
+		Odontologo Odonrologoactu = odontologoServiceImpl.actualizarOdontologo(Odontologoselecc);
 		return Odonrologoactu;
+	
+
 	}
 
 	// Delete Mappings
 	@DeleteMapping("/odontologo/{id}")
 	public void deleteOdontologist(@PathVariable(name = "id") int id) {
-		odontologistServiceImpl.eliminarOdontologo(id);
+		odontologoServiceImpl.eliminarOdontologo(id);
 	}
 }

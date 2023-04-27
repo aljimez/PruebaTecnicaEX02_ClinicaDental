@@ -14,46 +14,46 @@ public class ClientesServiceImpl implements IClientesService{
 
 	
 	@Autowired
-	IClientesDAO iClientDAO;
+	IClientesDAO iClientesDAO;
 
 	@Override
 	public List<Clientes> listarClientes() {
 		// TODO Auto-generated method stub
-		return iClientDAO.findAll();
+		return iClientesDAO.findAll();
 	}
 
 	@Override
 	public Clientes guardarClients(Clientes clients) {
 		// TODO Auto-generated method stub
-		return iClientDAO.save(clients);
+		return iClientesDAO.save(clients);
 	}
 
 	@Override
 	public Clientes clientesXID(int id) {
 		// TODO Auto-generated method stub
-		return iClientDAO.findById(id).get();
+		return iClientesDAO.findById(id).get();
 	}
 
 	@Override
 	public Clientes actualizarClients(Clientes clients) {
 		// TODO Auto-generated method stub
-		return iClientDAO.save(clients);
+		return iClientesDAO.save(clients);
 	}
 
 	@Override
 	public void eliminarClients(int id) {
 		// TODO Auto-generated method stub
-		iClientDAO.deleteById(id);
+		iClientesDAO.deleteById(id);
 	}
 
 	public Clientes saveCliente(Clientes client) {
 		// TODO Auto-generated method stub
-		return iClientDAO.save(client);
+		return iClientesDAO.save(client);
 	}
 
 	public List<Visita> listarVisitaXClientes(Clientes clientesXID) {
 		// TODO Auto-generated method stub
-		return iClientDAO.findByCliente(clientesXID);
+		return iClientesDAO.findByCliente(clientesXID);
 	}
 
 }

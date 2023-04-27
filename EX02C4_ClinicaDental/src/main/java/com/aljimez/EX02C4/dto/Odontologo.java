@@ -24,18 +24,30 @@ public class Odontologo {
 	private String name;
 	private int phoneNum;
 	private String email;
+	private String odontologo;
 	
 	@OneToMany(mappedBy = "odontologos")
 	private List<Visita> visit;
 	
 	public  Odontologo() {}
 	
-	public Odontologo(Long codigo, String dni, String name, int phoneNum,String email) {
+	public Odontologo(Long codigo, String dni, String name, int phoneNum,String email,String odontologo) {
 		this.codigo = codigo;
 		this.dni = dni;	
 		this.name= name;
 		this.phoneNum = phoneNum;
 		this.email = email;
+		this.odontologo = odontologo;
+	}
+	
+	
+
+	public String getOdontologo() {
+		return odontologo;
+	}
+
+	public void setOdontologo(String odontologo) {
+		this.odontologo = odontologo;
 	}
 
 	public Long getCodigo() {

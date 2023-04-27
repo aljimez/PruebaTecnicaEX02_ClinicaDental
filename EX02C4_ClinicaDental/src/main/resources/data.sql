@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS clientes(
 	id INT NOT NULL AUTO_INCREMENT,
 	dni varchar(20) UNIQUE NOT NULL,
 	name VARCHAR(255) DEFAULT NULL,
-	phoneNum bigint(20) DEFAULT NULL,
+	phoneNum int(20) DEFAULT NULL,
 	email VARCHAR(255) NOT NULL,
 	PRIMARY KEY (id)
 );
@@ -36,16 +36,16 @@ CREATE TABLE IF NOT EXISTS visitas(
 	FOREIGN KEY (odontologo_codigo) REFERENCES odontologos(codigo) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
-INSERT INTO clientes(dni, name, phoneNum, email) VALUES ('128933848H', 'Alejandro', 1781934, 'ajimenezal01@gmail.com');
-INSERT INTO clientes(dni, name, phoneNum, email) VALUES ('182349994J', 'Alberto', 1783994, 'ajimajl4@gmail.com');
-INSERT INTO clientes(dni, name, phoneNum, email) VALUES ('128548449E', 'Andrea', 2739495, 'aleal10@gmail.com');
+INSERT INTO clientes(dni, name, phoneNum, email) VALUES ('128933848H', 'Alejandro', '1781934', 'ajimenezal01@gmail.com');
+INSERT INTO clientes(dni, name, phoneNum, email) VALUES ('182349994J', 'Alberto', '1783994', 'ajimajl4@gmail.com');
+INSERT INTO clientes(dni, name, phoneNum, email) VALUES ('128548449E', 'Andrea', '2739495', 'aleal10@gmail.com');
 
 INSERT INTO odontologos(dni, name, phoneNum, email)
-VALUES ('191010394A', 'Jose', 181923, 'josemarin@gmail.com');
+VALUES ('191010394A', 'Jose', '181923', 'josemarin@gmail.com');
 INSERT INTO odontologos(dni, name, phoneNum, email)
-VALUES ('181892934I', 'Carme', 170404, 'carmefont@gmail.com');
+VALUES ('181892934I', 'Carme', '170404', 'carmefont@gmail.com');
 INSERT INTO odontologos(dni, name, phoneNum, email)
-VALUES ('188181940S', 'Teresa', 184244, 'cifuentes@gmail.com');
+VALUES ('188181940S', 'Teresa', '184244', 'cifuentes@gmail.com');
 
 INSERT INTO visitas(clientes_id, odontologo_codigo, proceso, time, prices) VALUES (2, 3, 'Implantacion de coronas', '2022-04-25 09:05:00', 300);
 INSERT INTO visitas(clientes_id, odontologo_codigo, proceso, time, prices) VALUES (1, 2, 'Empastes', '2022-04-25 10:00:00', 202);
