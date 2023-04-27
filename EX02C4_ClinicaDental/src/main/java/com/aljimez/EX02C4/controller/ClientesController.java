@@ -38,9 +38,8 @@ public class ClientesController {
 
 //Acceso a perfil de usuario por ID
 	@GetMapping("/clientes/{id}")
-	public Clientes clientById(@PathVariable(name = "id") int id) {
-		Clientes clientxID = new Clientes();
-		clientxID = clientServiceImpl.clientesXID(id);
+	public Clientes clientXID(@PathVariable(name = "id") int id) {
+		 Clientes clientxID = clientServiceImpl.clientesXID(id);
 		return clientxID;
 	}
 
