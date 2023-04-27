@@ -44,12 +44,13 @@ public class ClientesController {
 		return clientxID;
 	}
 
+	/*
 	// Get list of visits for client
-	@GetMapping("/clientes/{id}/visitas")
+	@GetMapping("/clientes/visitas/{id}")
 	public List<Visita> listarVisitasXClientes(@PathVariable(name = "id") Clientes clientes) {
 		return visitaServiceImpl.listarVisitasXClientes(clientes);
 
-	}
+	}*/
 
 	// Post Mappings
 	@PostMapping("/clientes")

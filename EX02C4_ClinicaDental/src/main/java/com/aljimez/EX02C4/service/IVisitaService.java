@@ -17,6 +17,6 @@ public interface IVisitaService {
 
 	void eliminarVisita(int id);
 
-	List<Visita> listarVisitasXClientes(Clientes clientes);
+	//List<Visita> listarVisitasXClientes(Clientes clientes);
 
 }

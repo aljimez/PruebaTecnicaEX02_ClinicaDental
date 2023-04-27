@@ -11,10 +11,10 @@ import com.aljimez.EX02C4.dto.Visita;
 public interface IVisitaDAO extends JpaRepository<Visita, Integer>{
 
 
-	List<Visita> findVisitsXOdontologoId(Long odontologistId);
+	//List<Visita> findVisitsXOdontologoId(Long odontologistId);
 
 
-	List<Visita> findVisitasXClientesId(Clientes clientes);
+	//List<Visita> findVisitasXClientesId(Clientes clientes);
 
 
 

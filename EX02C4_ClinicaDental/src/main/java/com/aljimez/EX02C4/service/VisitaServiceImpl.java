@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.aljimez.EX02C4.dao.IVisitaDAO;
-import com.aljimez.EX02C4.dto.Clientes;
 import com.aljimez.EX02C4.dto.Visita;
 
 @Service
@@ -42,17 +41,19 @@ public class VisitaServiceImpl implements IVisitaService {
 	public void eliminarVisita(int id) {
 		// TODO Auto-generated method stub
 		iVisitaDAO.deleteById(id);
-	}
-
+}
+	
+/*
 	@Override
 	public List<Visita> listarVisitasXClientes(Clientes clientes) {
 		// TODO Auto-generated method stub
 		return iVisitaDAO.findVisitasXClientesId(clientes);
-	}
-
+}
+/*
 	public List<Visita> listVisitsXOdontologoId(Long odontologoId) {
 		// TODO Auto-generated method stub
 		return iVisitaDAO.findVisitsXOdontologoId(odontologoId);
-	}
+		
+}*/
 
 }
