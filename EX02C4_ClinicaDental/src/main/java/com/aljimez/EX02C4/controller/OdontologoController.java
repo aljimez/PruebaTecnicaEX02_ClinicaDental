@@ -1,4 +1,5 @@
 package com.aljimez.EX02C4.controller;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,67 +12,70 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.aljimez.EX02C4.dto.Clientes;
 import com.aljimez.EX02C4.dto.Odontologo;
 import com.aljimez.EX02C4.dto.Visita;
+import com.aljimez.EX02C4.service.ClientesServiceImpl;
 import com.aljimez.EX02C4.service.OdontologoServiceImpl;
 import com.aljimez.EX02C4.service.VisitaServiceImpl;
-
 
 @RestController // Rest controller
 @RequestMapping("/api")
 public class OdontologoController {
-	
+
 	// Implement service
-		@Autowired
-		OdontologoServiceImpl odontologistServiceImpl;
+	@Autowired
+	OdontologoServiceImpl odontologistServiceImpl;
 
-		// Implement visit service
-		@Autowired
-		VisitaServiceImpl visitServiceImpl;
-		
+	// Implement visit service
+	@Autowired
+	VisitaServiceImpl visitServiceImpl;
 
-		// Get Mappings
-		@GetMapping("/odontologo")
-		public List<Odontologo> listOdontologists() {
-			return odontologistServiceImpl.listarOdontologo();
-		}
+	@Autowired
+	ClientesServiceImpl clientesServiceImpl;
 
-		@GetMapping("/odontologo/{id}")
-		public Odontologo odontologistById(@PathVariable(name = "id") int id) {
-			Odontologo odontologoxID = new Odontologo();
+	// Get Mappings
+	@GetMapping("/odontologo")
+	public List<Odontologo> listOdontologists() {
+		return odontologistServiceImpl.listarOdontologo();
+	}
 
-			odontologoxID = odontologistServiceImpl.odontologoXID(id);
+	@GetMapping("/odontologo/{id}")
+	public Odontologo odontologistXId(@PathVariable(name = "id") int id) {
+		Odontologo odontologoxID = new Odontologo();
 
-			return odontologoxID;
-		}
-		
+		odontologoxID = odontologistServiceImpl.odontologoXID(id);
 
-		// Get list of visits for odontologist
-		@GetMapping("/odontologo/{odontologoId}/visita")
-		public List<Visita> listVisitsByOdontologistId(@PathVariable(name = "odontologoId") Long odontologoId) {
-			return visitServiceImpl.listVisitsXOdontologoId(odontologoId);
+		return odontologoxID;
+	}
 
-		}
-		
-		@PostMapping("/odontologo")
-		public Odontologo saveOdontologist(@RequestBody Odontologo odontologist) {
-			return odontologistServiceImpl.guardarOdontologo(odontologist);
-		}
-		
-		@PutMapping("/odontologo/{id}")
-		public Odontologo updateOdontologist(@PathVariable(name = "id") Long id, @RequestBody Odontologo odontologist) {
-			Odontologo selectedOdontologist = new Odontologo(id, odontologist.getDni(), odontologist.getName(),
-					odontologist.getPhoneNum(), odontologist.getEmail()); 
-					Odontologo	updatedOdontologist = odontologistServiceImpl.actualizarOdontologo(selectedOdontologist);
-			return updatedOdontologist;
-		}
+	@GetMapping("/dentista/clientes")
+	public List<Clientes> listarClientes() {
+		return clientesServiceImpl.listarClientes();
 
-		
+	}
 
-		// Delete Mappings
-		@DeleteMapping("/odontologo/{id}")
-		public void deleteOdontologist(@PathVariable(name = "id") int id) {
-			odontologistServiceImpl.eliminarOdontologo(id);
-		}
+	@PostMapping("/odontologo")
+	public Odontologo saveOdontologist(@RequestBody Odontologo odontologo) {
+		return odontologistServiceImpl.guardarOdontologo(odontologo);
+	}
+	
+	@GetMapping("/dentista/citas")
+	public List<Visita> listarCitas(){
+		return visitServiceImpl.listarVisita();
+	}
+
+	@PutMapping("/odontologo/{id}")
+	public Odontologo updateOdontologist(@PathVariable(name = "id") Long id, @RequestBody Odontologo odontologo) {
+		Odontologo Odontologoselecc = new Odontologo(id, odontologo.getDni(), odontologo.getName(),
+				odontologo.getPhoneNum(), odontologo.getEmail());
+		Odontologo Odonrologoactu = odontologistServiceImpl.actualizarOdontologo(Odontologoselecc);
+		return Odonrologoactu;
+	}
+
+	// Delete Mappings
+	@DeleteMapping("/odontologo/{id}")
+	public void deleteOdontologist(@PathVariable(name = "id") int id) {
+		odontologistServiceImpl.eliminarOdontologo(id);
+	}
 }
-

@@ -25,7 +25,7 @@ public class Visita {
 	private Clientes clientes;
 	
 	@ManyToOne
-	@JoinColumn(name = "odontologo_id")
+	@JoinColumn(name = "odontologo_codigo")
 	private Odontologo odontologos;
 	
 	private String proceso;
@@ -37,11 +37,11 @@ public class Visita {
 	private double prices;
 	
 	public Visita() {}
-	public Visita (Long id, Clientes clients,Odontologo odontologos,String proceso, double prices,LocalDateTime time) {
+	public Visita (Long id, Clientes clients,Odontologo odontologo_codigo,String proceso, double prices,LocalDateTime time) {
 		
 		this.id = id;
 		this.clientes = clients;
-		this.odontologos = odontologos;
+		this.odontologos = odontologo_codigo;
 		this.proceso = proceso;
 		this.prices = prices;
 		this.time = time;

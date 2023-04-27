@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.aljimez.EX02C4.dto.Clientes;
-import com.aljimez.EX02C4.dto.Odontologo;
 import com.aljimez.EX02C4.dto.Visita;
 import com.aljimez.EX02C4.service.ClientesServiceImpl;
 import com.aljimez.EX02C4.service.OdontologoServiceImpl;
@@ -34,7 +33,7 @@ public class ClientesController {
 
 	@GetMapping("/clientes")
 	public List<Clientes> listClients() {
-		return clientServiceImpl.listarClients();
+		return clientServiceImpl.listarClientes();
 	}
 
 //Acceso a perfil de usuario por ID
@@ -45,14 +44,6 @@ public class ClientesController {
 		return clientxID;
 	}
 
-	// Acceso a lista de dentistas por clientes
-	@GetMapping("/clientes/odontologo")
-	public List<Odontologo> listOdontologists() {
-		return odontologistServiceImpl.listarOdontologo();
-
-	}
-	
-
 	// Get list of visits for client
 	@GetMapping("/clientes/{id}/visitas")
 	public List<Visita> listarVisitasXClientes(@PathVariable(name = "id") Clientes clientes) {
@@ -60,19 +51,18 @@ public class ClientesController {
 
 	}
 
-
 	// Post Mappings
 	@PostMapping("/clientes")
 	public Clientes saveClient(@RequestBody Clientes client) {
 		return clientServiceImpl.saveCliente(client);
 	}
-	
+
 	@PutMapping("/clientes/{id}")
 	public Clientes updateClients(@PathVariable(name = "id") int id, @RequestBody Clientes clients) {
 
 		Clientes Clients_selected = new Clientes();
 		Clientes Clients_updated = new Clientes();
-		
+
 		Clients_selected = clientServiceImpl.clientsXID(id);
 		Clients_selected.setName(clients.getName());
 		Clients_selected.setPhoneNum(clients.getPhoneNum());
@@ -83,6 +73,7 @@ public class ClientesController {
 
 		return Clients_updated;
 	}
+
 	// Delete Mappings
 	@DeleteMapping("/clientes/{id}")
 	public void delClient(@PathVariable(name = "id") int id) {

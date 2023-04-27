@@ -35,18 +35,7 @@ public class VisitaController {
 
 		return visitxID;
 	}
-/*
-	@GetMapping("/visits/clients/{id}")
-	public List<Visita> listVisitsByClients(@PathVariable(name = "id") int id) {
-		return visitServiceImpl.listVisitsXClientsId(id);
 
-	}
-/*
-	@GetMapping("/visits/odontologist/{id}")
-	public List<Visita> listaVisitasXOdontologistId(@PathVariable(name = "id") int id) {
-		return visitServiceImpl.listVisitsXOdontologistId(id);
-	}
-*/
 	@PostMapping("/visitas")
 	public Visita saveVisit(@RequestBody Visita visit) {
 		return visitServiceImpl.guardarVisita(visit);

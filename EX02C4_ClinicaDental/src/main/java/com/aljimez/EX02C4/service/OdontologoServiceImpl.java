@@ -7,12 +7,13 @@ import org.springframework.stereotype.Service;
 
 import com.aljimez.EX02C4.dao.IOdontologoDAO;
 import com.aljimez.EX02C4.dto.Odontologo;
+
 @Service
-public class OdontologoServiceImpl  implements IOdontologoService{
+public class OdontologoServiceImpl implements IOdontologoService {
 
 	@Autowired
 	IOdontologoDAO iOdontologistDAO;
-	
+
 	@Override
 	public List<Odontologo> listarOdontologo() {
 		// TODO Auto-generated method stub
@@ -20,7 +21,7 @@ public class OdontologoServiceImpl  implements IOdontologoService{
 	}
 
 	@Override
-	public Odontologo guardarOdontologo (Odontologo odontologist) {
+	public Odontologo guardarOdontologo(Odontologo odontologist) {
 		// TODO Auto-generated method stub
 		return iOdontologistDAO.save(odontologist);
 	}
@@ -42,10 +43,5 @@ public class OdontologoServiceImpl  implements IOdontologoService{
 		// TODO Auto-generated method stub
 		iOdontologistDAO.deleteById(id);
 	}
-
-
-
-
-
 
 }

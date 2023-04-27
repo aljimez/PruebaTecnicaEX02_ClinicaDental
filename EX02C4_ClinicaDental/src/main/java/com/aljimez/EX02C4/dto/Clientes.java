@@ -23,18 +23,19 @@ public class Clientes {
 	private String name;
 	private int phoneNum;
 	private String email;
-	
+
 	@OneToMany(mappedBy = "clientes")
 	private List<Visita> visit;
-	
-	public Clientes() {}
-	
-	public Clientes(Long id,String dni,String name,int phoneNum,String email,List<Visita> visitas) {
+
+	public Clientes() {
+	}
+
+	public Clientes(Long id, String dni, String name, int phoneNum, String email, List<Visita> visitas) {
 		this.id = id;
 		this.dni = dni;
 		this.name = name;
 		this.phoneNum = phoneNum;
-		this.email = email;	
+		this.email = email;
 		this.visit = visitas;
 	}
 
@@ -45,7 +46,7 @@ public class Clientes {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	
+
 	@JsonIgnore
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "visita")
 	public List<Visita> getVisit() {
@@ -84,7 +85,6 @@ public class Clientes {
 		this.email = email;
 	}
 
-
 	public void setVisit(List<Visita> visit) {
 		this.visit = visit;
 	}
@@ -94,7 +94,5 @@ public class Clientes {
 		return "Clients [id=" + id + ", dni=" + dni + ", name=" + name + ", phoneNum=" + phoneNum + ", email=" + email
 				+ ", visit=" + visit + "]";
 	}
-	
+
 }
-
-

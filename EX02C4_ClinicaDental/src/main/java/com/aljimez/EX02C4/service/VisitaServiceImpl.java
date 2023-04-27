@@ -44,15 +44,10 @@ public class VisitaServiceImpl implements IVisitaService {
 		iVisitaDAO.deleteById(id);
 	}
 
-
-
-
-
-
 	@Override
 	public List<Visita> listarVisitasXClientes(Clientes clientes) {
 		// TODO Auto-generated method stub
-		return iVisitaDAO.findVisitasXClientesId( clientes);
+		return iVisitaDAO.findVisitasXClientesId(clientes);
 	}
 
 	public List<Visita> listVisitsXOdontologoId(Long odontologoId) {
@@ -60,6 +55,4 @@ public class VisitaServiceImpl implements IVisitaService {
 		return iVisitaDAO.findVisitsXOdontologoId(odontologoId);
 	}
 
-
-	
 }

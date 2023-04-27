@@ -16,7 +16,7 @@ public class ClientesServiceImpl implements IClientesService{
 	IClientesDAO iClientDAO;
 
 	@Override
-	public List<Clientes> listarClients() {
+	public List<Clientes> listarClientes() {
 		// TODO Auto-generated method stub
 		return iClientDAO.findAll();
 	}

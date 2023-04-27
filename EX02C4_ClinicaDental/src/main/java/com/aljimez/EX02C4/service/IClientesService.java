@@ -6,7 +6,6 @@ import com.aljimez.EX02C4.dto.Clientes;
 
 public interface IClientesService {
 
-	public List<Clientes> listarClients();
 
 	public Clientes guardarClients(Clientes clients);
 
@@ -16,5 +15,7 @@ public interface IClientesService {
 	Clientes clientsXID(int id);
 
 	void eliminarClients(int id);
+
+	List<Clientes> listarClientes();
 
 }

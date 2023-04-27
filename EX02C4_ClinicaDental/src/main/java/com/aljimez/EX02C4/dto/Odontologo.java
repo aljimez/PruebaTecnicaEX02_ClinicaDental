@@ -18,7 +18,7 @@ public class Odontologo {
 
 	@Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private Long codigo;
 
 	private String dni;
 	private String name;
@@ -30,21 +30,21 @@ public class Odontologo {
 	
 	public  Odontologo() {}
 	
-	public Odontologo(Long id, String dni, String name, int phoneNum,String email) {
-		this.id = id;
+	public Odontologo(Long codigo, String dni, String name, int phoneNum,String email) {
+		this.codigo = codigo;
 		this.dni = dni;	
 		this.name= name;
 		this.phoneNum = phoneNum;
 		this.email = email;
 	}
 
-	public Long getId() {
-		return id;
+	public Long getCodigo() {
+		return codigo;
 	}
 
 	
-	public void setId(Long id) {
-		this.id = id;
+	public void setCodigo(Long codigo) {
+		this.codigo = codigo;
 	}
 
 	public String getDni() {
@@ -91,7 +91,7 @@ public class Odontologo {
 
 	@Override
 	public String toString() {
-		return "Odontologist [id=" + id + ", dni=" + dni + ", name=" + name + ", phoneNum=" + phoneNum + ", email="
+		return "Odontologist [codigo=" + codigo + ", dni=" + dni + ", name=" + name + ", phoneNum=" + phoneNum + ", email="
 				+ email + ", visit=" + visit + "]";
 	}
 	
