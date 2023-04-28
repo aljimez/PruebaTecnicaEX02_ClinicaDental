@@ -23,7 +23,7 @@ public class Clientes {
 	private String name;
 	private int phoneNum;
 	private String email;
-	private Clientes cliente;
+	private String cliente;
 
 
 	@OneToMany(mappedBy = "cliente")
@@ -32,7 +32,7 @@ public class Clientes {
 	public Clientes() {
 	}
 
-	public Clientes(Long id, String dni, String name, int phoneNum, String email, List<Visita> visitas,Clientes cliente) {
+	public Clientes(Long id, String dni, String name, int phoneNum, String email, List<Visita> visitas,String cliente) {
 		this.id = id;
 		this.dni = dni;
 		this.name = name;
@@ -44,11 +44,11 @@ public class Clientes {
 
 	
 	
-	public Clientes getCliente() {
+	public String getCliente() {
 		return cliente;
 	}
 
-	public void setCliente(Clientes cliente) {
+	public void setCliente(String cliente) {
 		this.cliente = cliente;
 	}
 

@@ -59,9 +59,9 @@ public class OdontologoController {
 	public Odontologo saveOdontologist(@RequestBody Odontologo odontologo) {
 		return odontologoServiceImpl.guardarOdontologo(odontologo);
 	}
-	
+
 	@GetMapping("/odontologo/visitas")
-	public List<Visita> listarVisitas(){
+	public List<Visita> listarVisitas() {
 		return visitaServiceImpl.listarVisita();
 	}
 
@@ -69,13 +69,10 @@ public class OdontologoController {
 	public Odontologo updateOdontologist(@PathVariable(name = "id") int id, @RequestBody Odontologo odontologo) {
 		Odontologo odontologoselec = new Odontologo();
 		Odontologo odonupd = new Odontologo();
-		
+
 		odontologoselec = odontologoServiceImpl.odontologoXID(id);
-		
-		
-		
+
 		return odonupd;
-	
 
 	}
 
