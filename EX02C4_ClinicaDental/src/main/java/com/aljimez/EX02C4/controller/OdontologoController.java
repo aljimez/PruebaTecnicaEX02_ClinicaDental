@@ -66,11 +66,15 @@ public class OdontologoController {
 	}
 
 	@PutMapping("/odontologo/{id}")
-	public Odontologo updateOdontologist(@PathVariable(name = "id") Long id, @RequestBody Odontologo odontologo) {
-		Odontologo Odontologoselecc = new Odontologo(id, odontologo.getDni(), odontologo.getName(),
-				odontologo.getPhoneNum(), odontologo.getEmail(),odontologo.getOdontologo());
-		Odontologo Odonrologoactu = odontologoServiceImpl.actualizarOdontologo(Odontologoselecc);
-		return Odonrologoactu;
+	public Odontologo updateOdontologist(@PathVariable(name = "id") int id, @RequestBody Odontologo odontologo) {
+		Odontologo odontologoselec = new Odontologo();
+		Odontologo odonupd = new Odontologo();
+		
+		odontologoselec = odontologoServiceImpl.odontologoXID(id);
+		
+		
+		
+		return odonupd;
 	
 
 	}

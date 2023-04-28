@@ -39,16 +39,6 @@ public class Odontologo {
 		this.email = email;
 		this.odontologo = odontologo;
 	}
-	
-	
-
-	public String getOdontologo() {
-		return odontologo;
-	}
-
-	public void setOdontologo(String odontologo) {
-		this.odontologo = odontologo;
-	}
 
 	public Long getCodigo() {
 		return codigo;

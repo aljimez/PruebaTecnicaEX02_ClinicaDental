@@ -23,7 +23,7 @@ public class Clientes {
 	private String name;
 	private int phoneNum;
 	private String email;
-	private String cliente;
+	private Clientes cliente;
 
 
 	@OneToMany(mappedBy = "cliente")
@@ -32,13 +32,23 @@ public class Clientes {
 	public Clientes() {
 	}
 
-	public Clientes(Long id, String dni, String name, int phoneNum, String email, List<Visita> visitas,String cliente) {
+	public Clientes(Long id, String dni, String name, int phoneNum, String email, List<Visita> visitas,Clientes cliente) {
 		this.id = id;
 		this.dni = dni;
 		this.name = name;
 		this.phoneNum = phoneNum;
 		this.email = email;
 		this.visit = visitas;
+		this.cliente = cliente;
+	}
+
+	
+	
+	public Clientes getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(Clientes cliente) {
 		this.cliente = cliente;
 	}
 
@@ -92,6 +102,7 @@ public class Clientes {
 		this.visit = visit;
 	}
 
+	
 	@Override
 	public String toString() {
 		return "Clients [id=" + id + ", dni=" + dni + ", name=" + name + ", phoneNum=" + phoneNum + ", email=" + email
