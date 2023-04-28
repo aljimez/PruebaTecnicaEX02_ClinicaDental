@@ -12,6 +12,7 @@ import com.aljimez.EX02C4.dto.Visita;
 @Service
 public class ClientesServiceImpl implements IClientesService{
 
+	//Funciones dentro de DAO para manipular Clientes 
 	
 	@Autowired
 	IClientesDAO iClientesDAO;

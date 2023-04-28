@@ -43,19 +43,19 @@ public class VisitaServiceImpl implements IVisitaService {
 		// TODO Auto-generated method stub
 		iVisitaDAO.deleteById(id);
 }
-	
-/*
+
 	@Override
 	public List<Visita> listarVisitasXClientes(Clientes cliente) {
 		// TODO Auto-generated method stub
-		return iVisitaDAO.listarVisitasXClientes(cliente);
-}
+		return iVisitaDAO.findByCliente(cliente);
+	}
 	
-/*
+
+
 	public List<Visita> listVisitsXOdontologoId(Long odontologoId) {
 		// TODO Auto-generated method stub
-		return iVisitaDAO.findVisitsXOdontologoId(odontologoId);
+		return iVisitaDAO.findVisitsXOdontologo(odontologoId);
 		
-}*/
+}
 
 }

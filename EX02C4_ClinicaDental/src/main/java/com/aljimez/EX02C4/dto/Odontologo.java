@@ -11,7 +11,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-
+//Establece los valores de la tabla para acceder desde el controller
 @Entity
 @Table(name = "odontologos")
 public class Odontologo {
@@ -39,7 +39,7 @@ public class Odontologo {
 		this.email = email;
 		this.odontologo = odontologo;
 	}
-
+//Getter y Setter
 	public Long getCodigo() {
 		return codigo;
 	}

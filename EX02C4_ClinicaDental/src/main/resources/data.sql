@@ -47,6 +47,6 @@ VALUES ('181892934I', 'Carme', '170404', 'carmefont@gmail.com');
 INSERT INTO odontologos(dni, name, phoneNum, email)
 VALUES ('188181940S', 'Teresa', '184244', 'cifuentes@gmail.com');
 
-INSERT INTO visitas(clientes_id, odontologo_codigo, proceso, time, prices) VALUES (2, 3, 'Implantacion de coronas', '2022-04-25 09:05:00', 300);
-INSERT INTO visitas(clientes_id, odontologo_codigo, proceso, time, prices) VALUES (1, 2, 'Empastes', '2022-04-25 10:00:00', 202);
-INSERT INTO visitas(clientes_id, odontologo_codigo, proceso, time, prices) VALUES (3, 1, 'Blanqueamiento dental', '2022-04-25 12:30:00', 390);
+INSERT INTO visitas(clientes_id, odontologo_codigo, proceso, time, prices) VALUES (2, 3, 'Implantacion de coronas', '2022-04-25 02:03:00', 300);
+INSERT INTO visitas(clientes_id, odontologo_codigo, proceso, time, prices) VALUES (1, 2, 'Empastes', '2022-02-25 05:00:00', 202);
+INSERT INTO visitas(clientes_id, odontologo_codigo, proceso, time, prices) VALUES (3, 1, 'Blanqueamiento dental', '2012-04-28 12:33:00', 390);

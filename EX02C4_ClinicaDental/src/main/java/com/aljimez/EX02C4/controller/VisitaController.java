@@ -14,16 +14,20 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.aljimez.EX02C4.dto.Visita;
 import com.aljimez.EX02C4.service.ClientesServiceImpl;
+import com.aljimez.EX02C4.service.OdontologoServiceImpl;
 import com.aljimez.EX02C4.service.VisitaServiceImpl;
 
-@RestController // Rest controller
+
+//Controller define los endpoints de visita
+@RestController 
 @RequestMapping("/api")
 public class VisitaController {
-	// Implement service
 	@Autowired
 	VisitaServiceImpl visitServiceImpl;
 	
 	ClientesServiceImpl clientesServiceImpl;
+	
+	OdontologoServiceImpl odontologosServiceImpl;
 
 	@GetMapping("/visitas")
 	public List<Visita> listVisits() {
@@ -44,7 +48,6 @@ public class VisitaController {
 		return visitServiceImpl.guardarVisita(visit);
 	}
 
-	// Put Mappings
 	@PutMapping("/visitas/{id}")
 	public Visita updateVisit(@PathVariable(name = "id") Long id, @RequestBody Visita visits) {
 		Visita selectedVisit = new Visita(id, visits.getClients(), 
@@ -64,6 +67,12 @@ public class VisitaController {
 		return clientesServiceImpl.listarVisitaXClientes(clientesServiceImpl.clientesXID(id));
 	}
 	
+	
+	@GetMapping ("/visitas/odontologos/{id}")
+	public List<Visita> visitaXOdontologosId(@PathVariable (name= "id")int id){
+		
+		return visitaXOdontologosId(id);
+	}
 	@DeleteMapping ("/visitas/{id}")
 	public void deleteVisit(@PathVariable(name = "id")int id) {
 		visitServiceImpl.eliminarVisita(id);

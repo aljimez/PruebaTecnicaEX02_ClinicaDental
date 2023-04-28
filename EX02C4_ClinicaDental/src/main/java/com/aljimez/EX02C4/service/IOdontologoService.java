@@ -6,10 +6,10 @@ import com.aljimez.EX02C4.dto.Odontologo;
 
 public interface IOdontologoService {
 
+//CRUD Odontologo
+	Odontologo guardarOdontologo(Odontologo odontologo);
 
-	Odontologo guardarOdontologo(Odontologo odontologist);
-
-	Odontologo actualizarOdontologo(Odontologo odontologist);
+	Odontologo actualizarOdontologo(Odontologo odontologo);
 
 	List<Odontologo> listarOdontologo();
 

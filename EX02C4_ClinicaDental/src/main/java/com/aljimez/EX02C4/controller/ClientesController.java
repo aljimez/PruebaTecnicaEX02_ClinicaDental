@@ -17,6 +17,9 @@ import com.aljimez.EX02C4.service.ClientesServiceImpl;
 import com.aljimez.EX02C4.service.OdontologoServiceImpl;
 import com.aljimez.EX02C4.service.VisitaServiceImpl;
 
+
+//Controller define los endpoints de clientes
+
 @RestController
 @RequestMapping("/api")
 public class ClientesController {

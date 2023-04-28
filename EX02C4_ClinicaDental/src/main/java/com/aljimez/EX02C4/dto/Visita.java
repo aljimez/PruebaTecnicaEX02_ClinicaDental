@@ -47,6 +47,8 @@ public class Visita {
 		this.time = time;
 		
 	}
+	//Getter y Setter
+
 	public Long getId() {
 		return id;
 	}

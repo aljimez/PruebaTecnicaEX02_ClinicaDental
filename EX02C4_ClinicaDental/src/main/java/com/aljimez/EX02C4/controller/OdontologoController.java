@@ -19,22 +19,21 @@ import com.aljimez.EX02C4.service.ClientesServiceImpl;
 import com.aljimez.EX02C4.service.OdontologoServiceImpl;
 import com.aljimez.EX02C4.service.VisitaServiceImpl;
 
+
+//Controller define los endpoints de odontologos
 @RestController // Rest controller
 @RequestMapping("/api")
 public class OdontologoController {
 
-	// Implement service
 	@Autowired
 	OdontologoServiceImpl odontologoServiceImpl;
 
-	// Implement visit service
 	@Autowired
 	VisitaServiceImpl visitaServiceImpl;
 
 	@Autowired
 	ClientesServiceImpl clientesServiceImpl;
 
-	// Get Mappings
 	@GetMapping("/odontologo")
 	public List<Odontologo> listOdontologists() {
 		return odontologoServiceImpl.listarOdontologo();
@@ -70,13 +69,18 @@ public class OdontologoController {
 		Odontologo odontologoselec = new Odontologo();
 		Odontologo odonupd = new Odontologo();
 
+
+		odontologoselec.setName(odontologo.getName());
+		odontologoselec.setPhoneNum(odontologo.getPhoneNum());
+		odontologoselec.setDni(odontologo.getDni());
+		odontologoselec.setEmail(odontologo.getEmail());
+
 		odontologoselec = odontologoServiceImpl.odontologoXID(id);
 
 		return odonupd;
 
 	}
 
-	// Delete Mappings
 	@DeleteMapping("/odontologo/{id}")
 	public void deleteOdontologist(@PathVariable(name = "id") int id) {
 		odontologoServiceImpl.eliminarOdontologo(id);

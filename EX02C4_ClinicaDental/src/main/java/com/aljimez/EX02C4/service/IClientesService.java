@@ -6,6 +6,8 @@ import com.aljimez.EX02C4.dto.Clientes;
 
 public interface IClientesService {
 
+	
+	//CRUD Clientes
 	public Clientes guardarClients(Clientes clients);
 
 	public Clientes actualizarClients(Clientes clients);

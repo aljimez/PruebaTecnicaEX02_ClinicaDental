@@ -3,10 +3,11 @@ package com.aljimez.EX02C4.service;
 import java.util.List;
 
 import com.aljimez.EX02C4.dto.Clientes;
+import com.aljimez.EX02C4.dto.Odontologo;
 import com.aljimez.EX02C4.dto.Visita;
 
 public interface IVisitaService {
-
+//CRUD Visita
 	Visita visitaXID(int id);
 
 	List<Visita> listarVisita();
@@ -17,9 +18,8 @@ public interface IVisitaService {
 
 	void eliminarVisita(int id);
 
-	//List<Visita> listarVisitasXClientes(Clientes cliente);
+	List<Visita> listarVisitasXClientes(Clientes cliente);
 
-	//List<Visita> listarVisitasXClientesId(int id);
-
+	List<Visita> listarVisitasXOdontologo(Odontologo odontologo);
 
 }

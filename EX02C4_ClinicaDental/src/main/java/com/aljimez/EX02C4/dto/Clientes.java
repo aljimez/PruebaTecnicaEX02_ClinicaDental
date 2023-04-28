@@ -12,6 +12,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
+
+//Establece los valores de la tabla Clientes para que se pueda acceder desde el controller 
 @Entity
 @Table(name = "clientes")
 public class Clientes {
@@ -42,7 +44,8 @@ public class Clientes {
 		this.cliente = cliente;
 	}
 
-	
+	//Getter y Setter
+
 	
 	public String getCliente() {
 		return cliente;

@@ -10,5 +10,7 @@ import com.aljimez.EX02C4.dto.Visita;
 public interface IOdontologoDAO extends JpaRepository<Odontologo, Integer>{
 
 	List<Visita> findByOdontologo(int id);
+	List<Visita> findVisitsXOdontologo(Long odontologoId);
+
 
 }
